@@ -1,37 +1,12 @@
-const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
-const morgan = require("morgan");
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const expressValidator = require("express-validator");
-require("dotenv").config();
+const createServer = require("./server"); // new
 
-const authRoutes = require("./routes/auth");
+const db = require("./db/connection");
 
-// DB
-mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-  })
-  .then((res) => console.log("DB connected"));
-
-mongoose.connection.on("error", (err) => {
-  console.log(`DB connection error: ${err.message}`);
-});
-
-// middlewares
-app.use(morgan("dev"));
-app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(expressValidator());
-// routes Middleware
-app.use("/api", authRoutes);
-
-const port = process.env.PORT || 8000;
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+db.connect().then(() => {
+  const app = createServer(); // new
+  const port = process.env.PORT || 8000;
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
 });

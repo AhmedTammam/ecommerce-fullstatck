@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "test": "mocha --recursive -t 100000 --exit"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +22,11 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
     "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0",
+    "mockgoose": "^8.0.4",
+    "supertest": "^5.0.0"
   }
 }

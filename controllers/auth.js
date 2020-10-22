@@ -18,7 +18,6 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
-  console.log(req.body);
   const { email, password } = req.body;
   User.findOne({ email }, (err, user) => {
     if (err || !user) {
