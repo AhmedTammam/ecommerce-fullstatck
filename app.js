@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const createServer = require("./server"); // new
 
 const db = require("./db/connection");

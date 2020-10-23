@@ -15,9 +15,9 @@ describe("Auth", () => {
     await request(app)
       .post("/api/signup")
       .send({
-        name: "asasaa",
-        email: "asaaas@g.com",
-        password: "dhsj5as989",
+        name: "test",
+        email: "test@g.com",
+        password: "ddddd6",
       })
       .expect(200)
       .then((res) => {
@@ -30,9 +30,9 @@ describe("Auth", () => {
     await request(app)
       .post("/api/signup")
       .send({
-        name: "asasaa",
-        email: "asaaas@g.com",
-        password: "dhsj5as989",
+        name: "test",
+        email: "test@g.com",
+        password: "ddddd6",
       })
       .expect(400)
       .then((res) => {
@@ -45,9 +45,9 @@ describe("Auth", () => {
     await request(app)
       .post("/api/signup")
       .send({
-        name: "gfasasgf",
-        email: "asaaas@g.com",
-        password: "dhsj5as989",
+        name: "test",
+        email: "test@g.com",
+        password: "ddddd6",
       })
       .expect(400)
       .then((res) => {
@@ -60,8 +60,8 @@ describe("Auth", () => {
     await request(app)
       .post("/api/signin")
       .send({
-        email: "asaaas@g.com",
-        password: "dhsj5as989",
+        email: "test@g.com",
+        password: "ddddd6",
       })
       .expect(200)
       .then((res) => {

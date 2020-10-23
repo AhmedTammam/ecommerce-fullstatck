@@ -1681,20 +1681,6 @@ mocha@^8.2.0:
     yargs-parser "13.1.2"
     yargs-unparser "2.0.0"
 
-mockgoose@^8.0.4:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/mockgoose/-/mockgoose-8.0.4.tgz#65add8944b4d3a771b760d5c19332df1ccc35d4b"
-  integrity sha512-e9M3HuEn3qcnuojdkx2ZDxpflVzh+TiLKLVGbw6uuOSS6KNF9WImsLPEtiliSOePsqc50c6hYaGOz3zgTmnnfg==
-  dependencies:
-    async "^2.6.1"
-    debug "^4.0.1"
-    fs-extra "^7.0.0"
-    https-proxy-agent "^2.2.1"
-    mongodb-prebuilt "^6.4.0"
-    portfinder "^1.0.13"
-    rimraf "^2.6.1"
-    uuid "^3.0.1"
-
 mongodb-download@^2.2.7:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/mongodb-download/-/mongodb-download-2.2.7.tgz#6bb4937e1a2bbd9756560c8dab0923253828ee98"

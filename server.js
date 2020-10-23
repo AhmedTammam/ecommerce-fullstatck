@@ -5,7 +5,8 @@ const cookieParser = require("cookie-parser");
 const expressValidator = require("express-validator");
 require("dotenv").config();
 
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/auth-router");
+const userRoutes = require("./routes/user-router");
 
 function createServer() {
   const app = express();
@@ -15,8 +16,10 @@ function createServer() {
   app.use(bodyParser.json());
   app.use(cookieParser());
   app.use(expressValidator());
+
   // routes Middleware
   app.use("/api", authRoutes);
+  app.use("/api", userRoutes);
   return app;
 }
 
