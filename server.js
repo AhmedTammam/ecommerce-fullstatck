@@ -5,9 +5,9 @@ const cookieParser = require("cookie-parser");
 const expressValidator = require("express-validator");
 require("dotenv").config();
 
-const authRoutes = require("./routes/auth-router");
-const userRoutes = require("./routes/user-router");
-const categoryRoutes = require("./routes/category-router");
+const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
 
 function createServer() {
   const app = express();

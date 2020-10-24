@@ -1,4 +1,4 @@
-const Category = require("../models/category-model");
+const Category = require("../models/category");
 const { errorHandler } = require("../helpers/dbErrorHandler");
 
 exports.createCategory = (req, res, next) => {

@@ -1,4 +1,4 @@
-const User = require("../models/user-model");
+const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const expressJwt = require("express-jwt");
 const { errorHandler } = require("../helpers/dbErrorHandler");
@@ -66,8 +66,12 @@ exports.isAuth = (req, res, next) => {
   next();
 };
 
+const userRole = {
+  admin: 1,
+  user: 0,
+};
 exports.isAdmin = (req, res, next) => {
-  if (req.profile.role === 0) {
+  if (req.profile.role === userRole.user) {
     return res.status(403).json({
       error: "Admin resource! Access denied",
     });
