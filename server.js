@@ -8,6 +8,7 @@ require("dotenv").config();
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
+const productRoutes = require("./routes/product");
 
 function createServer() {
   const app = express();
@@ -22,6 +23,7 @@ function createServer() {
   app.use("/api", authRoutes);
   app.use("/api", userRoutes);
   app.use("/api", categoryRoutes);
+  app.use("/api", productRoutes);
   return app;
 }
 
